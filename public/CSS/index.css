@@ -96,7 +96,7 @@ body {
     position: absolute;
     background-color: var(--first-layer-color);
     border-radius: 25px;
-    opacity: 0%;
+    display: none;
 }
 
 
