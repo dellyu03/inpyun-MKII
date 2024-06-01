@@ -6,7 +6,24 @@
     <title>000님에게 편지 보내기!</title>
     <link rel="stylesheet" href="./CSS/index.css">
 </head>
-<body>
+<!--모달 팝업-->
+<div id = "modalBg" class="modal">
+    <div id = "writePopup" class="popup popup__write-msg">
+        <div class="popup__write-header">
+            <div class="popup__write-header-title">팝업 제목</div>
+        </div>
+        <input type="text" class="popup__write-content">
+        <div class="popup__btn-container">
+            <button class="send-msg">편지 보내기</button>
+            <button id = "closeBtn" class="popoup__closeBtn" onclick="closeWriteTab()">닫기</button>
+        </div>
+    </div>
+    <div id = "readPopup" class="popup popup__read-msg">
+        <div>메세지 읽기 모드</div>
+        <button id = "closeBtn" class="popoup__closeBtn" onclick="closeReadTab()">닫기</button>
+    </div>
+</div>
+<body id = "body">
     <div class="content">
         <div class="profile-container">
             <div class="profile-container__profile-img"><img id = profile-img src="./img/github 오징어.png" alt="hello"></div>
@@ -19,16 +36,9 @@
             <button id = writeBtn class="btn btn-container__write-msg">편지 남기기</button>
             <button id = readBtn class="btn btn-container__read-msg">편지 보기</button>
         </div>
-        <div id = "msg-counter" class="msg-counter">안녕</div>
+        <div id = "msg-counter" class="msg-counter">지금까지 n명이 편지를 보냈습니다.</div>
     </div>
-    <div id = writePopup class="popup popup__write-msg">
-        <div class="popup__title">팝업 제목</div>
-        <p class="popup__content">팝업 내용</p>
-        <div class="popup__btn-container">
-            <button class="send-msg">편지 보내기</button>
-        </div>
-    </div>
-    <script src = "./JS/popup.js"></script>
 </body>
+<script src = "./JS/popup.js"></script>
 </html>
 
