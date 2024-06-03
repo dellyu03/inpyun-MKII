@@ -108,3 +108,24 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.popup__write-content {
+    margin-top: 2%;
+    width: 90%;
+    height: 90%;
+}
+
+.popup__read-letterContainer{
+    width: 90%;
+    height: 90%;
+    margin : auto;
+}
+
+.letterList-item {
+    width: 90%;
+    height: 5%;
+    background-color: grey;
+    border-radius: 5px;
+    margin :auto;
+    margin-top: 1%;
+}
