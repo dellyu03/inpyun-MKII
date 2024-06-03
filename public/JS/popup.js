@@ -49,6 +49,10 @@ function closeModal(event) {
 
 const letterContainer = document.getElementById("letterContainer")
 let letterList = [];
+var numberOfLetter = letterList.length;
+
+const showCount = document.getElementById("msg-counter");
+showCount.innerHTML = `지금까지 ${numberOfLetter}개의 편지를 받았습니다.`
 
 // 편지 보내는 함수
 function sendletterData() {
@@ -60,7 +64,12 @@ function sendletterData() {
         var letter = letterList[i];
         letterContainer.innerHTML += `<div class = "letterList-item">${letter}</div>`;
     }
+    numberOfLetter = letterList.length;
+    showCount.innerHTML = `지금까지 ${numberOfLetter}개의 편지를 받았습니다.`
 }
+
+
+
 
 
 //날짜 구현 함수
