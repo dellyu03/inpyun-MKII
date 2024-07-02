@@ -2,6 +2,7 @@
     --base-color: #161616;
     --first-layer-color: #313131; 
     --second-layer-color: #575757;
+    --third-layer-color : #707070;
     --title-font-size: 48px;
     --side-bar-border: 1px;
 }
@@ -108,24 +109,64 @@ body {
     justify-content: center;
     align-items: center;
 }
+.popup__write-title-container {
+    display: flex;
+    width: 100%;
+    margin-top: 3%;
+}
+.popup__write-titleText {
+    display: flex;
+    align-items: center;
+    margin : auto;
+    margin-right: 1%;
+}
+.popup__write-title {
+    width: 80%;
+    height: 1em;
+    margin : auto;
+    margin-left: 1%;
+    border : 2px solid grey;
+}
 
 .popup__write-content {
     margin-top: 2%;
     width: 90%;
-    height: 90%;
+    height: 85%;
 }
 
 .popup__read-letterContainer{
     width: 90%;
-    height: 90%;
+    height: 80%;
     margin : auto;
 }
 
 .letterList-item {
     width: 90%;
     height: 5%;
-    background-color: grey;
+    background-color: var(--third-layer-color);
     border-radius: 5px;
     margin :auto;
     margin-top: 1%;
+    border:0px;
+}
+
+.popup__Sender-Container {
+    display: flex;
+    margin-top: 3%;
+    width: 100%;
+}
+
+.popup__Sender-title {
+    display: flex;
+    align-items: center;
+    margin : auto;
+    margin-right: 1%;
+}
+
+.popup__Sender-input {
+    width: 40%;
+    height: 1em;
+    margin : auto;
+    margin-left: 1%;
+    border : 2px solid grey;
 }

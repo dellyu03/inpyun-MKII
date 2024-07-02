@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>000님에게 편지 보내기!</title>
+    <title id = "tabTitle">000님에게 편지 보내기!</title>
     <link rel="stylesheet" href="./CSS/index.css">
 </head>
 <body>
@@ -28,9 +28,17 @@
     <div id="modalBg" class="modal">
         <div id="writePopup" class="popup popup__write-msg">
             <div class="popup__write-header">
-                <div class="popup__write-header-title">편지 쓰기</div>
+                <div class="popup__write-title-container">
+                    <div class="popup__write-titleText">제목</div>
+                    <textarea name = "letter-title" id = "letter-title" class = "popup__write-title"></textarea>
+                </div>
             </div>
             <textarea name="letter" id="letter-content" class = "popup__write-content"></textarea>
+            <div class="popup__Sender-Container">
+                <div class="popup__Sender-title">보내는 이</div>
+                <textarea name = "sender" id = "sender" class = "popup__Sender-input"></textarea>
+                text
+            </div>
             <div class="popup__btn-container">
                 <button class="send-msg" onclick="sendletterData()">편지 보내기</button>
                 <button class="popup__closeBtn">닫기</button>
@@ -44,7 +52,9 @@
             <button class="popup__closeBtn">닫기</button>
         </div>
     </div>
-    
+    <div id = "table-list"></div>
     <script src="./JS/popup.js"></script>
+    <script src="./JS/db.js"></script>
 </body>
 </html>
+

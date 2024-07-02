@@ -44,29 +44,41 @@ function closeModal(event) {
     writePopup.style.display = "none";
     readPopup.style.display = "none";
     var letterContent = document.getElementById("letter-content");
+    var newLetterTitle = document.getElementById("letter-title");
     letterContent.value = "";
+    newLetterTitle.value = "";
 }
 
 const letterContainer = document.getElementById("letterContainer")
 let letterList = [];
 var numberOfLetter = letterList.length;
+var letterContents = {};
 
-const showCount = document.getElementById("msg-counter");
-showCount.innerHTML = `지금까지 ${numberOfLetter}개의 편지를 받았습니다.`
+//편지 데이터를 저장하는 함수
+function saveletterData(title, content)
+{
+    letterContents[title] = content;
+    console.log(letterContents)
+}
 
 // 편지 보내는 함수
 function sendletterData() {
-    const newLetter = document.getElementById("letter-content").value;
-    letterList.push(newLetter);
+    var newLetterTitle = document.getElementById("letter-title").value;
+    var newLetterContent = document.getElementById("letter-content").value;
+    saveletterData(newLetterTitle, newLetterContent);
+    letterList.push(newLetterTitle);
     closeModal(event);
     letterContainer.innerHTML = "";
     for (var i in letterList) {
         var letter = letterList[i];
-        letterContainer.innerHTML += `<div class = "letterList-item">${letter}</div>`;
+        letterContainer.innerHTML += `<button id = "letterListItem${i}" class = "letterList-item">${letter}</button>`;
     }
     numberOfLetter = letterList.length;
-    showCount.innerHTML = `지금까지 ${numberOfLetter}개의 편지를 받았습니다.`
+    showCount.innerHTML = `${year}년 ${month}월 ${date}일까지 ${numberOfLetter}개의 편지를 받았습니다.`
 }
+
+
+
 
 
 
@@ -106,7 +118,6 @@ function formatDate (input) {
 function calDiff(firstDate, secondDate) {
     var startDate =new Date(firstDate);
     var endDate = new Date (secondDate);
-    
     var timeGap = endDate - startDate;
     var daydiff = Math.ceil(timeGap/oneDay);
     
@@ -116,10 +127,19 @@ function calDiff(firstDate, secondDate) {
 var remainDays = calDiff(now, goal1.endDate);
 const remainTimeMsg = document.getElementById("remain-time");
 const displayUserName = document.getElementById("userName");
+const tabtitle = document.getElementById("tabTitle");
+tabtitle.innerHTML = `${userName}님에게 편지 보내기!`
 displayUserName.innerHTML = `${userName}님`;
 remainTimeMsg.innerHTML = `${goal1.name}까지 ${remainDays}일 남았습니다!`
 
 
+const showCount = document.getElementById("msg-counter");
+const nowDateList = formatDate(now)
+var year = nowDateList[0]; 
+var month = nowDateList[1]+1;
+var date = nowDateList[2];
+
+showCount.innerHTML = `${year}년 ${month}월 ${date}일까지 ${numberOfLetter}개의 편지를 받았습니다.`
 
 
 
