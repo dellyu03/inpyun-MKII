@@ -1,0 +1,91 @@
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin : 0px;
+    position: relative; /* body를 상위 요소로 설정 */
+    /* 투명도 설정 */
+    opacity: 1; /* 기본적으로 투명도를 1로 설정합니다. */
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.5);
+}
+
+body::before {
+    content: ''; /* 가상 요소에 내용을 없앱니다. */
+    position: absolute; /* 절대 위치로 설정하여 body를 덮습니다. */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 배경 이미지 설정 */
+    background-image: url(../img/test.jpg);
+    /* 이미지가 꽉 채우도록 설정 */
+    background-size: cover;
+    /* 이미지가 반복되지 않도록 설정 */
+    background-repeat: no-repeat;
+    /* 센터 정렬 */
+    background-position: center;
+    /* 투명도 설정 */
+    opacity: 0.9; /* 이 값을 조절해서 투명도를 조절할 수 있습니다. */
+    z-index: -1;
+}
+
+
+.container {
+    width: 30vw;
+    height: 65vh;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.sign-up-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    width: 50%;
+    height: 5%;
+    margin:auto;
+    margin-top: 5%;
+}
+
+.sign-up-form {
+    margin : auto;
+    height: 80%;
+    width: 50%;
+    margin-top : 10%;
+}
+
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
