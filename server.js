@@ -48,18 +48,25 @@ const path = require('path');
 //static 파일안에 든 정적 파일을 가져오는 코드
 app.use('/', express.static('public'));
 
-app.get('/', function(req, res){
+
+//index 페이지
+app.get('/', function(req, res){  
    app.use('/', express.static('public'));
     const filePath = path.join(__dirname, '/HTML/index.html')
     res.sendFile(filePath);
 });
 
-app.get('/test', function(req, res){
-  const filePath = path.join(__dirname, '/HTML/signup.html')
-  res.sendFile(filePath);
+//군인용 메인 페이지
+app.get('/account_soldier', function(req, res){  
+  app.use('/', express.static('public'));
+   const filePath = path.join(__dirname, '/HTML/account_soldier.html')
+   res.sendFile(filePath);
 });
 
-app.get('/signin', function(req, res){
-  const filePath = path.join(__dirname, '/HTML/signin.html')
+
+
+//편지 쓰기 창
+app.get('/writeletter', function(req, res){
+  const filePath = path.join(__dirname, '/HTML/writeLetter.html')
   res.sendFile(filePath);
 });
