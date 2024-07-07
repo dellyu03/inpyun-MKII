@@ -7,6 +7,17 @@ body {
 }
 
 /*header-section*/
+.pageName {
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin-top: 1%;
+    margin-left: 1%;
+
+    font-size: 32px;
+    color : var(--title-text-color); 
+    font-weight: bold;
+}
 
 
 /*content sections*/
@@ -36,6 +47,7 @@ body {
 
 
 .profile-name {
+    margin-top: 5%;
     color: var(--title-text-color);
     font-size: 32px;
 }
@@ -84,7 +96,7 @@ body {
 }
 
 .modify-info {
-    width: 4em;
+    width: 5em;
     height: 3em;
 
     border-radius: 25em;
@@ -95,9 +107,21 @@ body {
 
     font-family: 'Open Sans', sans-serif;
     font-weight: 900;
+
+    /*transition attribute*/
+    transition: background-color 0.1s;
+}
+
+.modify-info:hover {
+    cursor: pointer;
+    background-color: var(--focused-bg-color);
+    color : var(--focused-text);
 }
 
 
-
+/*footer section*/
+.button-container {
+    margin-top: 15%;
+}
 
 

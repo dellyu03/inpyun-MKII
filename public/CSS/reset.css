@@ -58,6 +58,10 @@ table {
     --main-text-color : #cccc;
     --additive-text-color : #dddd;
 
+    /*focused*/
+    --focused-bg-color : #7a7a7a;
+    --focused-text : #ffff;
+
 }
 
 
