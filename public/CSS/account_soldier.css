@@ -1,0 +1,127 @@
+/*body및 상위 요소 지정 구간*/
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*header-section*/
+.pageName {
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin-top: 1%;
+    margin-left: 1%;
+
+    font-size: 32px;
+    color : var(--title-text-color); 
+    font-weight: bold;
+}
+
+
+/*content sections*/
+
+/*프로파일 섹션*/
+.profile-container {
+    margin-top: 15%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.profile-img-container {
+    width: 150px;
+    height: 150px; 
+    border-radius: 70%;
+    overflow: hidden;
+}
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.profile-name {
+    margin-top: 5%;
+    color: var(--title-text-color);
+    font-size: 32px;
+}
+
+
+/*info section*/
+.informations-container {
+    margin-top: 10%;
+}
+
+.info-container {
+    margin-top: 2.5em;
+}
+
+.info-title {
+    margin-bottom: 1em;
+
+    color: var(--title-text-color);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info-content {
+    display: flex;
+    align-items: center;
+    
+    margin-bottom: 5%;
+
+    
+}
+
+.info {
+    display: flex;
+    align-items: center;
+
+    padding-left: 1em;
+    margin-right: 2em;
+
+    width: 20em;
+    height: 3em;
+
+    border-radius: 25em;
+
+    background-color: var(--layer-bg-color);
+    color : var(--main-text-color)
+}
+
+.modify-info {
+    width: 5em;
+    height: 3em;
+
+    border-radius: 25em;
+    border : 0px;
+
+    background-color: var(--highlight-color);
+    color : var(--additivie-text-color);
+
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 900;
+
+    /*transition attribute*/
+    transition: background-color 0.1s;
+}
+
+.modify-info:hover {
+    cursor: pointer;
+    background-color: var(--focused-bg-color);
+    color : var(--focused-text);
+}
+
+
+/*footer section*/
+.button-container {
+    margin-top: 15%;
+}
+
+

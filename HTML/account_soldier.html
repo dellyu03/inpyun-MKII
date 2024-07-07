@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id = "tabTitle">000님에게 편지 보내기!</title>
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/account_soldier.css">
+</head>
+<body>
+    <header>
+        <h1 class = "pageName">Profile</h1>
+    </header>
+    <content>
+        <div class="profile-container">
+            <div class = "profile-img-container" style="background: #BDBDBD;">
+                <img class="profile-img" src="./img/example-profile.png">
+            </div>
+            <p class = "profile-name" id = "userName">유승환</p>
+        </div>
+        <div class ="informations-container">
+            <div class="info-container">
+                <div class="info-title">입대일 : </div>
+                <div class="info-content">
+                    <div class="info">2023.02.14</div>
+                    <button class="modify-info">수정</button>
+                </div>
+            </div>
+            <div class="info-container">
+                <div class="info-title">전역 예정일 : </div>
+                <div class="info-content">
+                    <div class="info">2024.08.13</div>
+                    <button class="modify-info">수정</button>
+                </div>
+            </div>
+            <div class="info-container">
+                <div class="info-title">부대명 : </div>
+                <div class="info-content">
+                    <div class="info">육군 제28보병사단 제80보병여단 제1대대 화기중대</div>
+                    <button class="modify-info">수정</button>
+                </div>
+            </div>
+        </div>
+    </content>
+    <footer>
+        <div class="button-container">
+            <button class="calendar">달력</button>
+            <button class="write-msg">메세지</button>
+            <button class="profile-setting">설정</button>
+            <button class="friend-setting">친구</button>
+        </div>
+    </footer>
+    <script src="./JS/calculateDate.js"></script>
+    <script src="./JS/editInfo.js"></script>
+</body>
+</html>
+
