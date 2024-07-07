@@ -4,7 +4,7 @@ import path from 'path';
 
 const app = express()
 const port = 3000
-
+const __dirname = path.resolve();
 
 
 
@@ -26,7 +26,7 @@ connection.connect((err) => {
       return;
     }
     console.log('데이터베이스 연결 성공. 연결 ID:', connection.threadId);
-  });
+});
   
   // API 엔드포인트 - 테이블 목록 가져오기
 app.get('/tables', (req, res) => {
@@ -50,16 +50,14 @@ app.use('/', express.static('public'));
 
 //index 페이지
 app.get('/', function(req, res){  
-   app.use('/', express.static('public'));
-    const filePath = path.join(__dirname, '/HTML/index.html')
-    res.sendFile(filePath);
+  const filePath = path.join(__dirname, '/HTML/index.html')
+  res.sendFile(filePath);
 });
 
 //군인용 메인 페이지
 app.get('/account_soldier', function(req, res){  
-  app.use('/', express.static('public'));
-   const filePath = path.join(__dirname, '/HTML/account_soldier.html')
-   res.sendFile(filePath);
+  const filePath = path.join(__dirname, '/HTML/account_soldier.html')
+  res.sendFile(filePath);
 });
 
 
