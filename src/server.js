@@ -1,14 +1,8 @@
 import express from 'express'
-import path from 'path';
+import {connection} from './config/db.js'
+import {app} from './app.js';
 
-const app = express()
-const port = 3000
-const __dirname = path.resolve();
-
-//서버 시작
-app.listen(port, () => {
-  console.log(`서버가 http://localhost:${port} 에서 실행 중입니다`);
-});
+const port = 3000;
 
 connection.connect((err) => {
   if (err) {
@@ -17,4 +11,13 @@ connection.connect((err) => {
   }
   console.log('데이터베이스 연결 성공. 연결 ID:', connection.threadId);
 });
+
+
+
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
+
 
