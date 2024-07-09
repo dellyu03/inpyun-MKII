@@ -27,19 +27,6 @@ connection.connect((err) => {
     console.log('데이터베이스 연결 성공. 연결 ID:', connection.threadId);
   });
   
-  // API 엔드포인트 - 테이블 목록 가져오기
-app.get('/tables', (req, res) => {
-  connection.query('SHOW TABLES', (error, results) => {
-    if (error) {
-      res.status(500).send('데이터베이스 쿼리 실패');
-      return;
-    }
-  
-  const tables = results.map(row => row[Object.keys(row)[0]]);
-  res.json(tables);
-  });
-});
-
 
 
 //static 파일안에 든 정적 파일을 가져오는 코드
