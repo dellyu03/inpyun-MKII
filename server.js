@@ -1,6 +1,8 @@
-import {dbPassword} from './config/config.js';
+import {dbPassword} from './config/db.js';
 import express from 'express'
 import path from 'path';
+
+import {DbdatetoJS} from './util/DbdatetoJS.js'
 
 const app = express()
 const port = 3000
@@ -29,10 +31,38 @@ connection.connect((err) => {
   
 
 
-//static 파일안에 든 정적 파일을 가져오는 코드
-app.use('/', express.static('public'));
+//데이터베이스 조작
+
+//데이터베이스 군인 데이터 가져오기
+const userId = 1;
+
+
+connection.query(
+  'SELECT * FROM soldierinfo WHERE member_id = ?',
+  [userId],
+  (err, results, fields) => {
+    if (err) {
+      console.error(err);
+      throw err;
+    }
+    
+    const userData = results[0];
+    
+    //입대일 전역일 가져오는 코드
+    var enlistment_date = userData.enlistment_date;
+    var discharge_date = userData.discharge_date;
+    
+    enlistment_date = DbdatetoJS(enlistment_date);
+    discharge_date = DbdatetoJS(discharge_date);
+
+  }
+);
+
 
 //page route api
+
+//static 파일안에 든 정적 파일을 가져오는 코드
+app.use('/', express.static('public'));
 
 //index 페이지
 app.get('/', function(req, res){  
@@ -42,11 +72,15 @@ app.get('/', function(req, res){
 
 //군인용 메인 페이지
 app.get('/account_soldier', function(req, res){  
-   const filePath = path.join(__dirname, '/HTML/account_soldier.html')
-   res.sendFile(filePath);
+  const filePath = path.join(__dirname, '/HTML/account_soldier.html')
+  res.sendFile(filePath);
 });
 
-
+//편지 창
+app.get('/letterpage', function(req, res){
+  const filePath = path.join(__dirname, '/HTML/letterPage.html')
+  res.sendFile(filePath);
+});
 
 //편지 쓰기 창
 app.get('/writeletter', function(req, res){
